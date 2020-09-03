@@ -12,9 +12,9 @@ class Node
     Node next;
 
     // Constructor to create a new node
-    Node(int d)
+    Node(int dataOne)
     {
-        data = d;
+        data = dataOne;
         next = null;
     }
 }
@@ -38,19 +38,19 @@ class BinarySearch
         if (start == null)
             return null;
 
-        Node slow = start;
-        Node fast = start.next;
+        Node startOne = start;
+        Node nextOne = start.next;
 
-        while (fast != last)
+        while (nextOne != last)
         {
-            fast = fast.next;
-            if (fast != last)
+            nextOne = nextOne.next;
+            if (nextOne != last)
             {
-                slow = slow.next;
-                fast = fast.next;
+                startOne = startOne.next;
+                nextOne = nextOne.next;
             }
         }
-        return slow;
+        return startOne;
     }
 
     // function to insert a node at the beginning

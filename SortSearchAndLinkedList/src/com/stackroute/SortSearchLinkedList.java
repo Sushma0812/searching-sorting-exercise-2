@@ -1,7 +1,17 @@
 package com.stackroute;
 import java.util.Scanner;
 public class SortSearchLinkedList {
-    void bubble_sort(String[] arr,int n){
+    public static String[] getDetails() {
+        Scanner reader = new Scanner(System.in);
+        int i;
+        System.out.println("Enter elements");
+        String[] array = new String[10];
+        for (i = 0; i < 10; i++) {
+            array[i] = reader.next();
+        }
+        return array;
+    }
+    void bubbleSort(String[] arr,int n){
         String temp;
 
         //sorting items using bubble sort
@@ -17,6 +27,14 @@ public class SortSearchLinkedList {
         for(int i=0;i<arr.length;i++){
             System.out.println(i+":"+arr[i]);
         }
+    }
+    piblic static String[] Add(String[] array){
+        Linkedlist<String> list = new LinkedList<String>();
+        for(int i=0;i<array.length;i++){
+            list.add(array[i]);
+        }
+        System.out.println(Arrays.toString(array));
+        return null;
     }
     void search(String[] arr,String search)
     {
@@ -41,22 +59,24 @@ public class SortSearchLinkedList {
     }
 
     public static void main(String[] args) {
+        String[] items = getDetails();
         SortSearchLinkedList obj=new SortSearchLinkedList();
         Scanner sc=new Scanner(System.in);
-        String[] items=new String[5];
+        //String[] items=new String[5];
 
         //taking items from user
-        System.out.println("Enter 5 items");
+       /* System.out.println("Enter 5 items");
         for(int i=0;i<items.length;i++){
             items[i]=sc.next();
-        }
+        }*/
 
         //printing items before sorting
         for (int i=0;i<items.length;i++){
             System.out.println(i+":"+items[i]);
         }
+        Add(items);
 
-        obj.bubble_sort(items,items.length);
+        obj.bubbleSort(items,items.length);
 
         //accepting the search element
         System.out.println("Enter the item to be searched");
