@@ -87,12 +87,12 @@ class BinarySearch
         Node head = null;
 
 
-        head = push(head, 1);
-        head = push(head, 4);
-        head = push(head, 7);
-        head = push(head, 8);
-        head = push(head, 9);
         head = push(head, 10);
+        head = push(head, 30);
+        head = push(head, 23);
+        head = push(head, 82);
+        head = push(head, 95);
+        head = push(head, 44);
         int value = 73;
 
         if (binarySearch(head, value) == null)
