@@ -31,33 +31,29 @@ public class SortSearchLinkedList {
         }
     }
     public static String[] Add(String[] array){
-        Linkedlist<String> list = new Linkedlist<String>();
+        LinkedList list = new LinkedList();
         for(int i=0;i<array.length;i++){
-            list.add(array[i];
+            list.add(array[i]);
         }
         System.out.println(Arrays.toString(array));
         return null;
     }
-    void search(String[] arr,String search)
+    public int search(String[] array)
     {
         int i;
-        int flag = 0;
-        for(i = 0; i<5; i++)
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter the item to be searched");
+        String key=reader.next();
+        for(i = 0; i<10; i++)
         {
-            if (search.equals(arr[i]))
+            if (key.equals(array[i]))
             {
-                flag = 1;
-                break;
+                return i;
             }
 
         }
-        if (flag ==1) {
-            System.out.println("item found at position " + (i + 1));
-        }
-        else
-        {
-            System.out.println("item not found.");
-        }
+        return -1;
+
     }
 
     public static void main(String[] args) {
@@ -70,11 +66,13 @@ public class SortSearchLinkedList {
         }
         Add(strings);
         searchLinkedList.bubbleSort(strings,strings.length);
-
-        //accepting the key element
-        System.out.println("Enter the item to be searched");
-        String key=reader.next();
-        searchLinkedList.search(strings,key);
+        int value =  searchLinkedList.search(strings);
+       if(value == -1){
+           System.out.println("Element not found");
+       }
+       else{
+           System.out.println("Element found");
+       }
     }
 
 
